@@ -1,12 +1,4 @@
 X = int(input())
-N = int(input())  # 구매한 목록의 종류 (줄)
-result = [0 for i in range(N)]
-for i in range(N):
-    a, b = map(int, input().split())
-    result[i] = a*b
-
-total = sum(result)
-if total == X:
-    print("Yes")
-else:
-    print("No")
+N = int(input())
+total = sum([a*b for a, b in [map(int, input().split()) for _ in range(N)]])
+print("Yes" if total == X else "No")
