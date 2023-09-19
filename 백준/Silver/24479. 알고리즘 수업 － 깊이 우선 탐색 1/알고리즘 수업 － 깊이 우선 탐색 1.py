@@ -28,7 +28,8 @@ def DFS(start):
 
 DFS(R)
 
-for idx, node in zip(range(1, len(path)+1), path):
+
+for idx, node in enumerate(path, start=1):
     result[node] = idx
-    
+
 print(*result[1:], sep="\n")
