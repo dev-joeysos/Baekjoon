@@ -1,21 +1,17 @@
 def solution(arr):
-    idx = 0
-    prev = arr
+    x= 0
+    while(True):
+        check = []
+        for a in arr:
+            if a >= 50 and a % 2 == 0:
+                a /= 2
+            elif a < 50 and a % 2 == 1:
+                a = a * 2 + 1
+            check.append(a)
     
-    while True:
-        change = []
-        for i in prev:
-            if i >= 50 and i % 2 == 0: change.append(int(i / 2))
-            elif i < 50 and i % 2 == 1: change.append(i * 2 + 1)
-            else: change.append(i)
-
-        same = all(a == b for a, b in zip(prev, change))
-        if same:
+        if check == arr:
             break
-        idx += 1
-
-        prev = change
-    
-    return idx
-
-   
+        else:
+            arr = check # update new arr
+            x += 1
+    return x
