@@ -1,18 +1,11 @@
-# 1 일 1 백준
-# 2292 번
-# 220731
-
-# 최소 벌집 경로
-
 N = int(input())
-start = 0
+start = 1
 end = 1
-i = 0
+i = 1
 while True:
-    if start <= N <= end:
-        print(i+1)
+    if N in range(start, end+1):
+        print(i)
         break
-    else:
-        i += 1
-        start = end + 1
-        end = end + (6*i)
+    start = end + 1
+    end += 6*i
+    i += 1
