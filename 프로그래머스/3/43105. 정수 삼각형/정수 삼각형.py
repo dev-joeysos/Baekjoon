@@ -1,5 +1,4 @@
 def solution(triangle):
-    answer = 0
     for i in range(0, len(triangle)-1):
         prev_S = triangle[i]
         S = triangle[i+1]
@@ -12,6 +11,4 @@ def solution(triangle):
             else:
                 s += max(prev_S[idx-1], prev_S[idx])
             S[idx] = s
-    
-    answer = max(S)
-    return answer
+    return max(S)
